@@ -33,13 +33,20 @@
 
 * **Finding the sum of elements in a range:**
 ```c++
-segment_tree tree(arr, n);  // Create a segment tree from the array arr
-int sum = tree.query(left, right);  // Get the sum of elements from index left to right
+int inputArray[] = {1, 3, 5, 7, 9, 11};
+    int size = sizeof(inputArray) / sizeof(inputArray[0]);
+
+    int *segmentTree = constructST(inputArray, size);
+
+    cout << "Sum of values in given range = " << getSum(segmentTree, size, 1, 3) << endl;
+
 ```
 
 * **Updating a value in the array:**
 ```c++
-tree.update(index, newValue);  // Update the value at index
+updateValue(inputArray, segmentTree, size, 1, 10);
+
+    cout << "Updated sum of values in given range = " << getSum(segmentTree, size, 1, 3) << endl;
 ```
 
 ## Applications
